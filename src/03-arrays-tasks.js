@@ -428,8 +428,13 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  const sortCities = (a, b) => {
+    if (a.country + a.city < b.country + b.city) return -1;
+    return 1;
+  };
+
+  return arr.sort(sortCities);
 }
 
 /**
